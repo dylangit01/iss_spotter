@@ -5,9 +5,12 @@ nextISSTimesForMyLocation((error, passTimes) => {
     return console.log("It didn't work!", error);
   }
 	for (let i of passTimes) {
-		console.log(`Next pass at ${new Date(i.risetime)} for ${i.duration} seconds!`);
+		console.log(`Next pass at ${new Date(i.risetime * 1000)} for ${i.duration} seconds!`);
 	}
+  console.log(passTimes);
 });
+
+
 
 // fetchMyIP((error, ip) => {
 //   if (error) {
