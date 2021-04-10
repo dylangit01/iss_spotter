@@ -20,14 +20,12 @@ const fetchISSFlyOverTimes = coords => {
 const nextISSTimesForMyLocation = () => {
 	return fetchMyIP()
 		.then(fetchCoordsByIP)
-		.catch(error => console.log(error))
+		// .catch(error => console.log(error))
     .then(fetchISSFlyOverTimes)
 		.then(data => {
-			// console.log(data);
 			const { response } = JSON.parse(data)
 			return response;
 		});
 }
-
 
 module.exports = { nextISSTimesForMyLocation };
